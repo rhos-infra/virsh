@@ -1,8 +1,9 @@
-name: undercloud
+name: novacontrol
 prefix: null
-cpu: "4"
+cpu: "2"
 cpumodel: "host-model"
-memory: "16384"
+memory: "4096"
+swap: "0"
 os:
     type: "linux"
     variant: "rhel7"
@@ -17,10 +18,10 @@ disks:
 interfaces:
     - network: "data"
     - &external
-        network: management
-    - network: "external"
+        network: "management"
 external_network: *external
 
 groups:
-    - undercloud
     - openstack_nodes
+    - overcloud_nodes
+    - novacontrol
