@@ -1,8 +1,9 @@
-name: undercloud
+name: openshift-worker
 prefix: null
-cpu: "4"
+cpu: "2"
 cpumodel: "host-model"
-memory: "16384"
+memory: "4096"
+swap: "0"
 deploy_os: true
 os:
     type: "linux"
@@ -12,12 +13,11 @@ disks:
         import_url: null
         path: null
         dev: "/dev/vda"
-        size: "40G"
+        size: "30G"
         cache: "unsafe"
         preallocation: "metadata"
 # infraces and external_network dicts were moved to network file.
 interfaces: null
 
 groups:
-    - undercloud
-    - openstack_nodes
+    - openshift-worker
